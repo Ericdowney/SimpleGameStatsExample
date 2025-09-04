@@ -1,0 +1,29 @@
+{
+	"id": "GameStats",
+	"name": "Game Stats",
+	"enabledTests": [
+		"SimpleGameStats.SimpleGameStat.Decrement.Should broadcast OnChangeEvent when bBroadcastEvent = true",
+		"SimpleGameStats.SimpleGameStat.Decrement.Should subtract from value",
+		"SimpleGameStats.SimpleGameStat.GetStorage.Should return correct stat storage",
+		"SimpleGameStats.SimpleGameStat.GetValue.Should return the current value",
+		"SimpleGameStats.SimpleGameStat.Increment.Should add to value",
+		"SimpleGameStats.SimpleGameStat.Increment.Should broadcast OnChangeEvent when bBroadcastEvent = true",
+		"SimpleGameStats.SimpleGameStat.InflateFromStorage.Should rebuild state from storage",
+		"SimpleGameStats.SimpleGameStat.Milestones.Should not re-trigger milestone if already reached",
+		"SimpleGameStats.SimpleGameStat.Milestones.Should trigger OnMilestoneReachedEvent when threshold is reached",
+		"SimpleGameStats.SimpleGameStat.SetValue.Should broadcast OnChangeEvent when bBroadcastEvent = true",
+		"SimpleGameStats.SimpleGameStat.SetValue.Should not broadcast when bBroadcastEvent = false",
+		"SimpleGameStats.SimpleGameStat.SetValue.Should update the value",
+		"SimpleGameStats.SimpleGameStatsSubsystem.GetGameStat.Should return GameStat if stat exists",
+		"SimpleGameStats.SimpleGameStatsSubsystem.GetGameStat.Should return nullptr if stat does not exist",
+		"SimpleGameStats.SimpleGameStatsSubsystem.GetStorage / InflateFromStorage.Should rebuild stats from storage",
+		"SimpleGameStats.SimpleGameStatsSubsystem.GetStorage / InflateFromStorage.Should serialize stats into storage",
+		"SimpleGameStats.SimpleGameStatsSubsystem.OnGameStatChangeEvent.Should broadcast when a stat changes",
+		"SimpleGameStats.SimpleGameStatsSubsystem.RegisterGameStats.Should gracefully handle null Definitions",
+		"SimpleGameStats.SimpleGameStatsSubsystem.RegisterGameStats.Should ignore duplicate stat names",
+		"SimpleGameStats.SimpleGameStatsSubsystem.RegisterGameStats.Should register stats from definitions",
+		"SimpleGameStats.SimpleGameStatsSubsystem.RemoveAllGameStats.Should clear all registered stats",
+		"SimpleGameStats.SimpleGameStatsSubsystem.RemoveGameStat.Should remove an existing stat",
+		"SimpleGameStats.SimpleGameStatsSubsystem.RemoveGameStat.Should return false if stat does not exist"
+	]
+}
