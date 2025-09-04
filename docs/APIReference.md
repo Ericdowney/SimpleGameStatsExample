@@ -2,7 +2,7 @@
 
 This document provides a reference for all public classes, structs, properties, functions, and events exposed by the **SimpleGameStats** plugin.
 
-**Please Note:** For blueprint compatibility reasons, return values have been implemented as reference parameters with a name of `Result`.
+**Please Note:** For blueprint compatibility reasons, functions that return values use out reference parameters named `Result`.
 
 ## **Modules**
 

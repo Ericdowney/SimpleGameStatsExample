@@ -23,7 +23,7 @@ The `USimpleGameStatsSubystem` provides two APIs for storage. The first is to re
 GetStorage(FSimpleGameStatsSubsystemStorage& Result)
 ```
 
-This function will collect all registred stats, convert them to storage, and set the `Result` reference. You can use the `Result` to set the property on your `USaveGame` subclass.
+This function collects all registered stats, converts them to storage, and assigns them to the `Result` reference. You can use the `Result` to set the property on your `USaveGame` subclass.
 
 ### Loading Data
 

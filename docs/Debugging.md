@@ -30,8 +30,8 @@ SimpleGameStats=Verbose
 SimpleGameStatsEditor=Verbose
 ```
 
-Enabling these will display the internal logs for **SimpleGameStats**. These can be used to trace the execution path to see where the problem is occuring.
+Enabling these will display the internal logs for **SimpleGameStats**. These can be used to trace the execution path to see where the problem is occurring.
 
-### Github Issues
+### Issues & Support
 
-If you diagnose a problem with **SimpleGameStats** or are unable to get it working properly, please add an issue to the [Github Issue Tracker](https://github.com/Ericdowney/SimpleGameStatsExample/issues).
+If you diagnose a problem with **SimpleGameStats**, are unable to get it working properly, or have a new feature request, please add an issue to the [Github Issue Tracker](https://github.com/Ericdowney/SimpleGameStatsExample/issues).

@@ -54,7 +54,7 @@ With the Data Asset created, open it, and define your game's stats. The followin
 
 The above image shows the definition of 2 game stats. The first one is "Game Time". I'm using this stat to track how long the player is playing the game. This stat does not define any milestones.
 
-The second stat is "Enemies Defeated". This tracks how many enemies the player kills in the example project. For this stat, I've defined two milestones.
+The second stat is "Enemies Defeated". This tracks how many enemies the player defeats in the example project. For this stat, I've defined two milestones.
 
 * **AI Menace I** - Requires 1 enemy killed
 * **AI Menace II** - Requires 2 enemy killed
@@ -79,9 +79,9 @@ if (IsValid(StatsSubsystem)) {
 }
 ```
 
-Please note, that all game stats are identified by name. Names must be unique. In the event you attempt to register a game stat with an existing name, the subsystem will ignore the new stat.
+Please note that all game stats are identified by name. Names must be unique. In the event you attempt to register a game stat with an existing name, the subsystem will ignore the new stat.
 
-In addition, you may register as many stat definition assets as you like provided the stat names are unqiue across all assets.
+In addition, you may register as many stat definition assets as you like provided the stat names are unique across all assets.
 
 ## Bind Events
 
@@ -97,7 +97,7 @@ There are two events that are published by the `SimpleGameStatsSubsystem`.
 **C++**
 
 ```c++
-StatsSubsystem->OnGameStatChangeEvent.AddDynamic(this, &AShooterGameMode::HandleGameStaChange);
+StatsSubsystem->OnGameStatChangeEvent.AddDynamic(this, &AShooterGameMode::HandleGameStatChange);
 StatsSubsystem->OnGameStatMilestoneReachedEvent.AddDynamic(this, &AShooterGameMode::HandleGameStatMilestones);
 ```
 
