@@ -1,5 +1,28 @@
 # SimpleGameStats Example Project
 
-The example project for the **SimpleGameStats** plugin on Fab. This project does not include the **SimpleGameStats** plugin and will not function without it.
+[![Bluesky](https://img.shields.io/badge/Bluesky-0285FF?style=for-the-badge&logo=Bluesky&logoColor=white)](https://bsky.app/profile/minigamedev.bsky.social)
+[![Mastodon](https://img.shields.io/badge/-MASTODON-%232B90D9?style=for-the-badge&logo=mastodon&logoColor=white)](https://mastodon.gamedev.place/@minigamedev)
+[![YouTube](https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@MiniGameDev)
 
-Once you have purchased the **SimpleGameStats** on Fab, it can be installed in the `Plugins/` directory in the example project. For detailed documentation on the **SimpleGameStats** plugin and example project, please see the [Documentation](./docs/README.md)
+This repository contains the example project and full documentation for the **SimpleGameStats** plugin, available on Fab.
+
+## What it is
+
+**SimpleGameStats** is a lightweight, modular stat system for Unreal Engine 5+. It gives you the building blocks to track and manage any kind of game stat without bloat or locking you into a rigid framework.
+
+Supports Unreal Engine Versions:
+* 5.4
+* 5.5
+* 5.6
+
+## How to use this repo
+
+* This project **DOES NOT** include the plugin itself.
+* After purchasing SimpleGameStats on Fab, open the example project and follow along with the documentation.
+* Full setup guide, API references, and examples are available in the [Documentation](./docs/README.md)
+
+## Issues
+
+If you run into problems or would like to suggest a feature:  
+* Open a ticket in the [Issues tab](https://github.com/Ericdowney/SimpleGameStatsExample/issues)  
+* Or follow me for updates: [Bluesky](https://bsky.app/profile/minigamedev.bsky.social), [Mastodon](https://mastodon.gamedev.place/@minigamedev), [YouTube](https://www.youtube.com/@MiniGameDev)
