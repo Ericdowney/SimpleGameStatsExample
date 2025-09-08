@@ -13,11 +13,11 @@ class STATPLUGINEXAMPLE_API UStatConstants : public UObject
 	
 public:
     UFUNCTION(BlueprintPure, Category="Stat Constants")
-    static FName GetStatName_GameTime() { return FName("Game Time"); }
+    static FName GetStatName_GameTime() { return FName("GameTime"); }
     
     UFUNCTION(BlueprintPure, Category="Stat Constants")
-    static FName GetStatName_EnemiesDefeated() { return FName("Enemies Defeated"); }
+    static FName GetStatName_EnemiesDefeated() { return FName("EnemiesDefeated"); }
     
     UFUNCTION(BlueprintPure, Category="Stat Constants")
-    static FName GetStatName_GunsCollected() { return FName("Guns Collected"); }
+    static FName GetStatName_GunsCollected() { return FName("GunsCollected"); }
 };

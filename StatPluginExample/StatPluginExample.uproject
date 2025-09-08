@@ -13,7 +13,7 @@
 				"AIModule",
 				"UMG",
 				"CoreUObject",
-                "SimpleGameStats"
+				"SimpleGameStats"
 			]
 		}
 	],
@@ -33,9 +33,10 @@
 			"Name": "GameplayStateTree",
 			"Enabled": true
 		},
-        {
-            "Name": "SimpleGameStats",
-            "Enabled": true
-        }
+		{
+			"Name": "SimpleGameStats",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/Fab/product/44e2d0d4-120c-4b6a-972a-b92c3887902d"
+		}
 	]
 }
