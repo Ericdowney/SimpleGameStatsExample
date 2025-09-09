@@ -1,6 +1,6 @@
 # Setup
 
-Once the plugin is installed and enabled in Unreal Engine, if you want to use the plugin with C++, you will need to add `SimpleGameStats` to your project file, `<YourGame>.uproject`, under `Modules -> AdditionalDepenedencies`. Here's the example's project file for reference:
+Once the plugin is installed and enabled in Unreal Engine, if you want to use the plugin with C++, you will need to add `SimpleGameStats` to your project file, `<YourGame>.uproject`, under `Modules -> AdditionalDepenedencies` and the `Plugins` array. Here's the example's project file for reference:
 
 ```
 {
@@ -37,7 +37,12 @@ Once the plugin is installed and enabled in Unreal Engine, if you want to use th
         {
             "Name": "GameplayStateTree",
             "Enabled": true
-        }
+        },
+		{
+			"Name": "SimpleGameStats",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/Fab/product/44e2d0d4-120c-4b6a-972a-b92c3887902d"
+		}
     ]
 }
 ```
@@ -52,9 +57,16 @@ With the Data Asset created, open it, and define your game's stats. The followin
 
 ![Example of 2 Game Stats Definitions with Milestones](./Images/StatsDefinitionDataAsset.png)
 
-The above image shows the definition of 2 game stats. The first one is "Game Time". I'm using this stat to track how long the player is playing the game. This stat does not define any milestones.
+The above image shows the definition of 2 game stats. The first one is "GameTime". I'm using this stat to track how long the player is playing the game. This stat does not define any milestones.
 
-The second stat is "Enemies Defeated". This tracks how many enemies the player defeats in the example project. For this stat, I've defined two milestones.
+The second stat is "EnemiesDefeated". This tracks how many enemies the player defeats in the example project. For this stat, I've defined two milestones.
+
+**Identifying Names (IDs)**
+
+* **EnemiesDefeated.1** - Requires 1 enemy killed
+* **EnemiesDefeated.2** - Requires 2 enemies killed
+
+**Localized Names**
 
 * **AI Menace I** - Requires 1 enemy killed
 * **AI Menace II** - Requires 2 enemy killed
@@ -63,7 +75,7 @@ When the value of the stat is greater than or equal to the configured value in t
 
 ## Register Stat Definitions
 
-To register the Simple Game Stats Definition asset, the `SimpleGameStatsSubsystem` has the `RegisterGameStats(USimpleGameStatsDefinition* Definitions)` function. You may use this in either C++ or Blueprints to register the data asset. Once registered, the corresponding stats will be tracked within the subsystem.
+To register the Simple Game Stats Definition asset, the `SimpleGameStatsSubsystem` has the `RegisterGameStats(USimpleGameStatsDefinition* Definitions)` function. You may use this in either C++ or Blueprints to register the data asset. Once registered, the corresponding stats will be created & tracked within the subsystem.
 
 **Blueprint**
 
@@ -79,7 +91,7 @@ if (IsValid(StatsSubsystem)) {
 }
 ```
 
-Please note that all game stats are identified by name. Names must be unique. In the event you attempt to register a game stat with an existing name, the subsystem will ignore the new stat.
+Please note that all game stats are identified by name. Names must be unique. In the event you attempt to register a game stat with an existing name, the subsystem will ignore the new stat and all milestones.
 
 In addition, you may register as many stat definition assets as you like provided the stat names are unique across all assets.
 
@@ -104,3 +116,5 @@ StatsSubsystem->OnGameStatMilestoneReachedEvent.AddDynamic(this, &AShooterGameMo
 The first event, `OnGameStatChangeEvent`, is published when any registered game stat value changes. This can be used to update UI elements tied to stats or inform different systems of the update.
 
 The second event, `OnGameStatMilestoneReachedEvent`, is published when a registered game stat's milestone target value is reached. This can be used to connect to other achievement or analytics systems.
+
+**Please Note**: `OnGameStatMilestoneReachedEvent` will broadcast prior to `OnGameStatChangeEvent`. This is to ensure all milestone data is up-to-date when `OnGameStatChangeEvent` broadcasts.

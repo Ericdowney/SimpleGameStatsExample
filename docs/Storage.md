@@ -1,12 +1,12 @@
 # Storage
 
-**SimpleGameStats** provides a structure meant to be used in conjunction with Unreal's `USaveGame` class, as well as a simple API to save and load stat data. This allows you to save game stat data however you like.
+**SimpleGameStats** provides a structure meant to be used in conjunction with Unreal's `USaveGame` class, as well as a simple API to save and load stat data in the subsystem. This allows you to save game stat data however you like.
 
 *All functionality is supported by both Blueprints and C++.*
 
 ## FSimpleGameStatsSubsystemStorage
 
-The `FSimpleGameStatsSubsystemStorage` struct can store the list of registered stats with their values and milestones.
+The `FSimpleGameStatsSubsystemStorage` struct stores the list of registered stats with their values and milestones.
 
 To use this in your project, simply add this to your `USaveGame` subclass:
 

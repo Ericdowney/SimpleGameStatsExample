@@ -4,14 +4,14 @@ The provided example project is the Unreal Engine 5.6 First Person template prov
 
 In the example project, I've registered three stats with various milestones:
 
-* Game Time
-* Enemies Defeated
-    * AI Menace I, Target Value: 1
-    * AI Menace II, Target Value: 2
-* Guns Collected
-    * Armed and Dangerous I, Target Value: 1
-    * Armed and Dangerous II, Target Value: 2
-    * Armed and Dangerous III, Target Value: 3
+* GameTime
+* EnemiesDefeated
+    * EnemiesDefeated.1 - AI Menace I, Target Value: 1
+    * EnemiesDefeated.2 - AI Menace II, Target Value: 2
+* GunsCollected
+    * GunsCollected.1 - Armed and Dangerous I, Target Value: 1
+    * GunsCollected.2 - Armed and Dangerous II, Target Value: 2
+    * GunsCollected.3 - Armed and Dangerous III, Target Value: 3
 
 In addition, I've added a Blueprint Compatible C++ Constants file. This avoids using "magic strings" throughout the project. Please create an equivalent in your project to avoid problems when renaming or removing stats.
 
@@ -27,13 +27,13 @@ class STATPLUGINEXAMPLE_API UStatConstants : public UObject
     
 public:
     UFUNCTION(BlueprintPure, Category="Stat Constants")
-    static FName GetStatName_GameTime() { return FName("Game Time"); }
+    static FName GetStatName_GameTime() { return FName("GameTime"); }
     
     UFUNCTION(BlueprintPure, Category="Stat Constants")
-    static FName GetStatName_EnemiesDefeated() { return FName("Enemies Defeated"); }
+    static FName GetStatName_EnemiesDefeated() { return FName("EnemiesDefeated"); }
     
     UFUNCTION(BlueprintPure, Category="Stat Constants")
-    static FName GetStatName_GunsCollected() { return FName("Guns Collected"); }
+    static FName GetStatName_GunsCollected() { return FName("GunsCollected"); }
 };
 ```
 
@@ -59,7 +59,7 @@ void AShooterGameMode::BeginPlay()
 
 ## AShooterCharacter
 
-For tracking the "Guns Collected" stat, I'm modifying the `AShooterCharacter` class, the `AddWeaponClass` function. This is the class in the example that is inherited by `BP_ShooterCharacter`, the player character.
+For tracking the "GunsCollected" stat, I'm modifying the `AShooterCharacter` class, the `AddWeaponClass` function. This is the class in the example that is inherited by `BP_ShooterCharacter`, the player character.
 
 ```c++
 void AShooterCharacter::AddWeaponClass(const TSubclassOf<AShooterWeapon>& WeaponClass)
@@ -79,11 +79,11 @@ void AShooterCharacter::AddWeaponClass(const TSubclassOf<AShooterWeapon>& Weapon
 }
 ```
 
-Using the `SimpleGameStatsSubsystem`, I call `IncrementStat` for the "Guns Collected" stat every time the player picks up a new kind of weapon.
+Using the `SimpleGameStatsSubsystem`, I call `IncrementStat` for the "GunsCollected" stat every time the player picks up a new kind of weapon.
 
 ## AShooterNPC
 
-For tracking the "Enemies Defeated" stat, I'm modifying the `AShooterNPC` class, the `Die` function. This is the class in the example that is inherited by `BP_ShooterNPC`, the AI enemies.
+For tracking the "EnemiesDefeated" stat, I'm modifying the `AShooterNPC` class, the `Die` function. This is the class in the example that is inherited by `BP_ShooterNPC`, the AI enemies.
 
 ```c++
 void AShooterNPC::Die()
@@ -106,11 +106,11 @@ void AShooterNPC::Die()
 }
 ```
 
-Using the `SimpleGameStatsSubsystem`, I call `IncrementStat` for the "Enemies Defeated" stat every time the AI NPC dies.
+Using the `SimpleGameStatsSubsystem`, I call `IncrementStat` for the "EnemiesDefeated" stat every time the AI NPC dies.
 
 ## BP_ShooterGameMode
 
-For tracking the "Game Time" stat, I'm modifying the `BP_ShooterGameMode` blueprint, the `Event Tick` event. I've also added a new function to retrieve the current "Game Time" stat value.
+For tracking the "GameTime" stat, I'm modifying the `BP_ShooterGameMode` blueprint, the `Event Tick` event. I've also added a new function to retrieve the current "GameTime" stat value.
 
 *GetGameTimeStatValue:*
 
