@@ -36,7 +36,14 @@
 		{
 			"Name": "SimpleGameStats",
 			"Enabled": true,
-			"MarketplaceURL": "com.epicgames.launcher://ue/Fab/product/44e2d0d4-120c-4b6a-972a-b92c3887902d"
+			"MarketplaceURL": "com.epicgames.launcher://ue/Fab/product/44e2d0d4-120c-4b6a-972a-b92c3887902d",
+			"SupportedTargetPlatforms": [
+				"Win64",
+				"Mac",
+				"Linux",
+				"Android",
+				"IOS"
+			]
 		}
 	]
 }

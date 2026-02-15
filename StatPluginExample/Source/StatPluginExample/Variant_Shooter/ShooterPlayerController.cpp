@@ -54,6 +54,8 @@ void AShooterPlayerController::BeginPlay()
 
 void AShooterPlayerController::SetupInputComponent()
 {
+	Super::SetupInputComponent();
+
 	// only add IMCs for local player controllers
 	if (IsLocalPlayerController())
 	{

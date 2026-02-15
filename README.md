@@ -14,6 +14,7 @@ Supports Unreal Engine Versions:
 * 5.4
 * 5.5
 * 5.6
+* 5.7
 
 ## How to use this repo
 
@@ -31,3 +32,4 @@ If you run into problems or would like to suggest a feature:
 
 * [1.0.0 Documentation](https://github.com/Ericdowney/SimpleGameStatsExample/tree/v1.0.0)
 * [1.1.0 Documentation](https://github.com/Ericdowney/SimpleGameStatsExample/tree/v1.1.0)
+* [1.2.0 Documentation](https://github.com/Ericdowney/SimpleGameStatsExample/tree/v1.2.0)
